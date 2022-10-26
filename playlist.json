@@ -1,0 +1,13 @@
+ [{"artist": "Alicia Keys" ,"title": "Empire State of Mind", "genre" : ["RandB"] , "releaseyear": 2009 },
+  {"artist" : "Danny Ocean","title": "Me Rehuso", "genre" : ["Dance Pop"] , "releaseyear" : 2009 },
+  {"artist" : "Drake","title": "Passionfruit", "genre" : ["Hiphop", "RandB"] , "releaseyear" : 2017 },
+  {"artist" : "Taylor Swift","title": "New Romantics", "genre" : ["Pop"] , "releaseyear" : 2014 },
+  {"artist": "ENHYPEN","title": "Given-Taken", "genre" : ["Kpop"], "releaseyear" : 2020 },
+  {"artist": "The Weeknd","title": "Less than Zero", "genre" : ["RandB"] , "releaseyear": 2022},
+  {"artist": "Wallows","title": "Quarterback", "genre" : ["Alternative"] , "releaseyear" : 2020},
+  {"artist" : "Kid Cudi","title": "Pursuit of Happiness", "genre" : ["Hiphop"], "releaseyear" : 2009},
+  {"artist" : "Rihanna","title": "Love on the Brain", "genre": ["RandB"] , "releaseyear" : 2016},
+  {"artist" : "Steve Lacy","title": "Helmet", "genre": ["RandB"] , "releaseyear": 2022},
+  {"artist" : "The Weeknd" ,"title": "Out of Time", "genre" : ["RandB"] , "releaseyear": 2022},
+  {"artist" : "Nicki Minaj","title": "Pills N Potions", "genre": ["RandB", "Hiphop"] , "releaseyear":2014 }
+]

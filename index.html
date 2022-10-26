@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<script language="javascript">
+    //read in json data
+	$.get("playlist.json", 
+		  function( data ) {
+      //stringify for unformatted data
+			str = JSON.stringify(data);
+      $("#unformatted").html(str + "<br/>")
+			//document.write(str +"<br/>");
+		strHTML= "<ul>";
+    //loop through each song and print information
+		data.forEach(function(song) { 
+		strHTML += "<li> " + "Artist: " 
+			  + song.artist + "</br> Title: " 
+				+ song.title + "</br> Genre: "
+        + song.genre + "</br> Release Year: "
+        + song.releaseyear + "</br>";
+      ;
+			}) 
+  	strHTML += "</ul>";
+    //display on page
+  	$("#formatted").html(strHTML);  
+	}) // end read in
+  //for viewing dropdown menu
+  function myFunction() {            
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+  //filter json data by user selected genre
+  function filterGenre() {
+    var mylist = document.getElementById("myList");
+    document.getElementById("genre").value = mylist.options[mylist.selectedIndex].text;
+    //alert(document.getElementById("genre").value);
+    $.get("playlist.json", 
+		  function(data) {
+		  strHTML= "<ul>";
+		  data.forEach(function(song) { 
+        //alert("genre length = " + song.genre.length);
+        for (var i = 0; i < song.genre.length; i++){
+          if (song.genre[i] == document.getElementById("genre").value){
+          strHTML += "<li> " + "Artist: " 
+  			  + song.artist + "</br> Title: " 
+  				+ song.title + "</br> Genre: "
+          + song.genre + "</br> Release Year: "
+          + song.releaseyear + "</br>";
+          }
+        }
+			}) 
+  	strHTML += "</ul>";
+    //write filtered onto divs in page
+  	$("#filtered").html(strHTML); 
+    //remove other content from page
+    $("#unformatted").html(""); 
+    $("#formatted").html(""); 
+	})
+} //end filter genre
+    
+</script>
+  <div id = "unformatted"></div>
+  <div id = "formatted"></div>
+  <div id = "filtered"></div>
+  
+<form>
+<select id = "myList" >  
+<option> Choose a genre </option>  
+<option> Pop </option>  
+<option> Hiphop </option>  
+<option> Kpop </option>  
+<option> RandB </option>  
+<option> Alternative </option>  
+</select> 
+  <p> Your selected genre is: 
+  <input type = "text" id = "genre" size = "20" </p>
+  <input type = "button" value = "Filter" onclick = "filterGenre()" id = "filter"/>
+</form>
+</body>
+</html>
